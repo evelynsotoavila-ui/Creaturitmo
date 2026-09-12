@@ -18,5 +18,5 @@
 			<a href="/login" class="link block">Entrar</a>
 		</div>
 	</div>
-	<p class="wrap mt-12 text-xs text-zinc-600">© {new Date().getFullYear()} PULSO. Hecho para la gen que no se queda quieta.</p>
+	<p class="wrap mt-12 text-xs text-zinc-600">© {new Date().getFullYear()} PULSO · Hecho por Evelyn Soto Avila</p>
 </footer>
