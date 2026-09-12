@@ -11,8 +11,8 @@
 	<p class="text-xs uppercase tracking-[0.3em] text-pink">drops</p>
 	<h2 class="font-display mt-3 text-5xl font-extrabold text-white md:text-7xl">Lo que está sonando.</h2>
 	<div class="mt-14 grid gap-8 md:grid-cols-2">
-		{#each items as item (item.t)}
-			<article class="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
+		{#each items as item, i (item.t)}
+			<article class="group float-slow overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-2 hover:border-cyan/40" style="animation-delay:{i * 0.4}s">
 				<div class="flex h-56 items-center justify-center bg-linear-to-br from-neon/30 via-pink/20 to-cyan/20 text-7xl transition duration-300 group-hover:scale-105">
 					{item.i}
 				</div>

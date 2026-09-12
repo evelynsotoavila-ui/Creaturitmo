@@ -7,12 +7,14 @@
 	import Community from '$lib/components/Community.svelte';
 	import Cta from '$lib/components/Cta.svelte';
 	import Footer from '$lib/components/Footer.svelte';
+	import Bg3d from '$lib/components/Bg3d.svelte';
 </script>
 
 <svelte:head>
 	<title>PULSO · tu crew, tu ritmo</title>
 </svelte:head>
 
+<Bg3d />
 <Nav />
 <main>
 	<Hero />
