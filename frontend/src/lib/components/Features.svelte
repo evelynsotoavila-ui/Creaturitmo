@@ -1,46 +1,26 @@
 <script lang="ts">
-	const features = [
-		{
-			icon: "⚡",
-			title: "Planes al toque",
-			text: "Encuentra jams, partidos, estudios y salidas cerca de ti en minutos."
-		},
-		{
-			icon: "🎧",
-			title: "Crews con vibe",
-			text: "Únete a grupos por música, arte, deporte o lo que te esté pegando ahora."
-		},
-		{
-			icon: "🪩",
-			title: "Crea y comparte",
-			text: "Sube clips, drops y collabs. Acá se celebra lo que haces, no el like."
-		},
-		{
-			icon: "🛡️",
-			title: "Espacio seguro",
-			text: "Moderación real y reportes rápidos. Tu paz mental también es parte del feed."
-		}
+	const items = [
+		{ cat: 'Live jam', t: 'Skatepark Saturday', i: '🎸' },
+		{ cat: 'Playlist', t: 'Noche cian', i: '💿' },
+		{ cat: 'Crew', t: 'Norte beats', i: '🎧' },
+		{ cat: 'Drop', t: 'Lo-fi after hours', i: '🌙' }
 	];
 </script>
 
-<section id="vibes" class="px-4 py-16 sm:px-6 sm:py-24">
-	<div class="mx-auto max-w-6xl">
-		<div class="max-w-2xl">
-			<p class="text-sm font-semibold uppercase tracking-[0.25em] text-cyan">por qué pulso</p>
-			<h2 class="mt-3 font-display text-4xl font-extrabold text-white sm:text-5xl">Hecho para tu era.</h2>
-			<p class="mt-4 text-zinc-400">Menos scroll vacío. Más gente con la que sí quieres estar.</p>
-		</div>
-
-		<div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-			{#each features as feature (feature.title)}
-				<article class="card-glow">
-					<div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-linear-to-br from-neon/40 to-cyan/30 text-xl">
-						{feature.icon}
-					</div>
-					<h3 class="font-display text-xl font-bold text-white">{feature.title}</h3>
-					<p class="mt-2 text-sm leading-relaxed text-zinc-400">{feature.text}</p>
-				</article>
-			{/each}
-		</div>
+<section id="drops" class="wrap py-24 md:py-32">
+	<p class="text-xs uppercase tracking-[0.3em] text-pink">drops</p>
+	<h2 class="font-display mt-3 text-5xl font-extrabold text-white md:text-7xl">Lo que está sonando.</h2>
+	<div class="mt-14 grid gap-8 md:grid-cols-2">
+		{#each items as item (item.t)}
+			<article class="group overflow-hidden rounded-[2rem] border border-white/10 bg-white/5 transition duration-300 hover:-translate-y-1 hover:border-cyan/40">
+				<div class="flex h-56 items-center justify-center bg-linear-to-br from-neon/30 via-pink/20 to-cyan/20 text-7xl transition duration-300 group-hover:scale-105">
+					{item.i}
+				</div>
+				<div class="p-6">
+					<p class="text-xs uppercase tracking-widest text-cyan">{item.cat}</p>
+					<h3 class="font-display mt-2 text-3xl font-bold text-white">{item.t}</h3>
+				</div>
+			</article>
+		{/each}
 	</div>
 </section>

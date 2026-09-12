@@ -1,33 +1,19 @@
 @import "tailwindcss";
-
 @theme {
   --font-sans: "Outfit", ui-sans-serif, system-ui, sans-serif;
-  --font-display: "Syne", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Syne", ui-sans-serif, sans-serif;
   --color-ink: #07060d;
-  --color-ink-soft: #12101c;
   --color-neon: #b026ff;
   --color-pink: #ff2bd6;
   --color-cyan: #22f0ff;
 }
-
-@layer components {
-  .btn-primary {
-    @apply inline-flex items-center justify-center rounded-full bg-linear-to-r from-neon via-pink to-cyan px-6 py-3 text-sm font-semibold text-ink shadow-[0_0_28px_rgba(176,38,255,0.45)] transition duration-300 hover:scale-[1.03] hover:shadow-[0_0_40px_rgba(34,240,255,0.4)];
-  }
-
-  .btn-secondary {
-    @apply inline-flex items-center justify-center rounded-full border border-white/15 bg-white/5 px-6 py-3 text-sm font-semibold text-white backdrop-blur-sm transition duration-300 hover:border-cyan/60 hover:bg-white/10;
-  }
-
-  .card-glow {
-    @apply rounded-[1.75rem] border border-white/10 bg-white/5 p-6 shadow-[0_0_40px_rgba(176,38,255,0.12)] backdrop-blur-md transition duration-300 hover:-translate-y-1 hover:border-cyan/40 hover:shadow-[0_0_36px_rgba(34,240,255,0.18)];
-  }
+html { scroll-behavior: smooth; }
+body { @apply m-0 overflow-x-hidden bg-ink font-sans text-zinc-300 antialiased; }
+.wrap { @apply mx-auto w-full max-w-6xl px-5 sm:px-8; }
+.btn { @apply inline-flex items-center justify-center rounded-full bg-linear-to-r from-neon via-pink to-cyan px-6 py-3 text-sm font-semibold text-ink transition duration-300 hover:scale-[1.03]; }
+.link { @apply text-zinc-400 transition duration-300 hover:text-cyan; }
+.grad { @apply bg-linear-to-r from-neon via-pink to-cyan bg-clip-text text-transparent; }
+@keyframes marquee {
+  to { transform: translateX(-50%); }
 }
-
-html {
-  scroll-behavior: smooth;
-}
-
-body {
-  @apply bg-ink font-sans text-zinc-200 antialiased;
-}
+.marquee { animation: marquee 28s linear infinite; }
